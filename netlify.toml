@@ -6,6 +6,27 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Redirect API routes to Netlify Functions
+[[redirects]]
+  from = "/api/instagram/status"
+  to = "/.netlify/functions/instagram-status"
+  status = 200
+
+[[redirects]]
+  from = "/api/stories/generate"
+  to = "/.netlify/functions/stories-generate-svg"
+  status = 200
+
+[[redirects]]
+  from = "/api/stories-generate-svg"
+  to = "/.netlify/functions/stories-generate-svg"
+  status = 200
+
+[[redirects]]
+  from = "/api/instagram-status"
+  to = "/.netlify/functions/instagram-status"
+  status = 200
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
